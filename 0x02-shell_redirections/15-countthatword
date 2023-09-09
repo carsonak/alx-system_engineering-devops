@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -Fce bin /etc/passwd
+grep -Fc -e bin /etc/passwd

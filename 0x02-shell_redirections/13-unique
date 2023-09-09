@@ -1,2 +1,2 @@
 #!/bin/bash
-sort --file0-from=list -u
+sort -u
