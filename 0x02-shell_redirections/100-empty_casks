@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -size 0c | xargs ls -1
+find . -size 0c -execdir ls -1 \;
