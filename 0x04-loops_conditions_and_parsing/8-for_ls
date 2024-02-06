@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# List files in a firectory without their leading slashes
+# List file names in a directory with the part before the dash removed
 
 files="$(ls)"
 for f in $files
-do echo "${f#[[:digit:]]*-}"
+do echo "${f#*-}"
 done
