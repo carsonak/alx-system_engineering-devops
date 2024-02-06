@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Testing regex and expr
+# Testing pattern substitutions and regex
 
 temp='abcABC123AAABCabc&@___4321'
 echo "$temp -> [${#temp}]"
