@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Display to infinity and beyond indefinetly, traps some signals
+
+pgrep -f "$0" > "/var/run/myscript.pid"
+trap 'rm "/var/run/myscript.pid"; echo "I hate the kill command"; exit' TERM
+trap 'echo "Y U no love me?!"; exit' INT
+trap 'rm "/var/run/myscript.pid"; exit' QUIT
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
