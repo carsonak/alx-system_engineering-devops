@@ -1,1 +1,10 @@
 #!/usr/bin/env bash
+# Writes "I am alive!" indefinitely to file "/tmp/my_process"
+
+trap 'rm "/tmp/my_process"' EXIT
+
+while true
+do
+    echo "I am alive!" >> /tmp/my_process
+    sleep 2
+done
