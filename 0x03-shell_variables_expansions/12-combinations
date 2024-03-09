@@ -1,2 +1,4 @@
 #!/bin/bash
-echo {a..z}{a..z}
+for comb in {a..z}{a..z}
+do if [[ $comb != "oo" ]]; then echo $comb; fi
+done
