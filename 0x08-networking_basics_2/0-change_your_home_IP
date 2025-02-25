@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-sed -E -i -e 's/(^127\.0\.0\.)1\s+(localhost)/\12\t\2/' -e 's/^157\.240\.11\.35\s+(facebook\.com)/8.8.8.8\t\1/' /etc/hosts
+cp /etc/hosts ~/hosts.new
+sed -E -i -e 's/(^127\.0\.0\.)1\s+(localhost)/\12\t\2/' -e 's/^157\.240\.11\.35\s+(facebook\.com)/8.8.8.8\t\1/' ~/hosts.new
+mv -f ~/hosts.new /etc/hosts
