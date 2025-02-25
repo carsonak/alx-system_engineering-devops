@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # Changes ip addresses for localhost and facebook.com
 
-cp /etc/hosts ~/hosts.tmp
-sed -E -i -e 's/(^127\.0\.0\.)1\s+(localhost)/\12	\2/' -e 's/^157\.240\.11\.35\s+(facebook\.com)/8.8.8.8	\1/' ~/hosts.tmp
-mv -f ~/hosts.tmp /etc/hosts
+sed -E -i -e 's/(^127\.0\.0\.)1\s+(localhost)/\12\t\2/' -e 's/^157\.240\.11\.35\s+(facebook\.com)/8.8.8.8\t\1/' /etc/hosts
