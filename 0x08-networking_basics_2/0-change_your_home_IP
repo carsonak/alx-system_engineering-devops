@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # Changes ip addresses for localhost and facebook.com
 
-cp /etc/hosts ~/hosts.new
+cp -f /etc/hosts ./hosts.new
 
-if grep -q -E '(^127\.0\.0\.)1\s+localhost' ~/hosts.new
-then sed -E -i -e 's/(^127\.0\.0\.)1\s+(localhost)/\12\t\2/' ~/hosts.new
-else printf '127.0.0.2\tlocalhost\n' >> ~/hosts.new
+if grep -q -E '(^127\.0\.0\.)1\s+localhost' ./hosts.new
+then sed -E -i -e 's/(^127\.0\.0\.)1(\s+localhost)/\12\2/' ./hosts.new
+else printf '127.0.0.2\tlocalhost\n' >> ./hosts.new
 fi
 
-if grep -q -E '^157\.240\.11\.35\s+facebook\.com' ~/hosts.new
-then sed -E -i -e 's/^157\.240\.11\.35\s+(facebook\.com)/8.8.8.8\t\1/' ~/hosts.new
-else printf '8.8.8.8\tfacebook.com' >> ~/hosts.new
+if grep -q -E '^157\.240\.11\.35\s+facebook\.com' ./hosts.new
+then sed -E -i -e 's/^157\.240\.11\.35\(s+facebook\.com)/8.8.8.8\1/' ./hosts.new
+else printf '8.8.8.8\tfacebook.com' >> ./hosts.new
 fi
 
-mv -f ~/hosts.new /etc/hosts
+mv -f ./hosts.new /etc/hosts
