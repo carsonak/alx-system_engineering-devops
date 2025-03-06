@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Displays ipv4 addresses on the machine
 
-ifconfig | grep -o -P '(\d{1,3}\.){3}\d{1,3}' -
+ip -o address show up | grep -o -P 'inet +(\d{1,3}\.){3}\d{1,3}' - | tr -s " " | cut --delimiter=' ' --fields=2 -
