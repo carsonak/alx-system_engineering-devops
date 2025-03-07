@@ -10,7 +10,7 @@ fi
 
 if grep -q -E '^157\.240\.11\.35\s+facebook\.com' ./hosts.new
 then sed -E -i -e 's/^157\.240\.11\.35\(s+facebook\.com)/8.8.8.8\1/' ./hosts.new
-else printf '8.8.8.8\tfacebook.com' >> ./hosts.new
+else printf '8.8.8.8\tfacebook.com\n' >> ./hosts.new
 fi
 
 mv -f ./hosts.new /etc/hosts
